@@ -15,6 +15,8 @@
 		6FC39B4C1D8E7F6E000126A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC39B4A1D8E7F6E000126A6 /* LaunchScreen.storyboard */; };
 		6FC39B571D8E7F6E000126A6 /* getUUIDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC39B561D8E7F6E000126A6 /* getUUIDTests.m */; };
 		6FC39B621D8E7F6E000126A6 /* getUUIDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC39B611D8E7F6E000126A6 /* getUUIDUITests.m */; };
+		6FC39B721D8E8154000126A6 /* getUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC39B711D8E8154000126A6 /* getUUID.m */; };
+		6FC39B751D8E81B6000126A6 /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC39B741D8E81B6000126A6 /* KeyChainStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		6FC39B5D1D8E7F6E000126A6 /* getUUIDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = getUUIDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FC39B611D8E7F6E000126A6 /* getUUIDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = getUUIDUITests.m; sourceTree = "<group>"; };
 		6FC39B631D8E7F6E000126A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FC39B6F1D8E8058000126A6 /* getUUID.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = getUUID.entitlements; sourceTree = "<group>"; };
+		6FC39B701D8E8154000126A6 /* getUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getUUID.h; sourceTree = "<group>"; };
+		6FC39B711D8E8154000126A6 /* getUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getUUID.m; sourceTree = "<group>"; };
+		6FC39B731D8E81B6000126A6 /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
+		6FC39B741D8E81B6000126A6 /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,7 @@
 		6FC39B3B1D8E7F6E000126A6 /* getUUID */ = {
 			isa = PBXGroup;
 			children = (
+				6FC39B6F1D8E8058000126A6 /* getUUID.entitlements */,
 				6FC39B3F1D8E7F6E000126A6 /* AppDelegate.h */,
 				6FC39B401D8E7F6E000126A6 /* AppDelegate.m */,
 				6FC39B421D8E7F6E000126A6 /* ViewController.h */,
@@ -110,6 +118,10 @@
 				6FC39B4A1D8E7F6E000126A6 /* LaunchScreen.storyboard */,
 				6FC39B4D1D8E7F6E000126A6 /* Info.plist */,
 				6FC39B3C1D8E7F6E000126A6 /* Supporting Files */,
+				6FC39B701D8E8154000126A6 /* getUUID.h */,
+				6FC39B711D8E8154000126A6 /* getUUID.m */,
+				6FC39B731D8E81B6000126A6 /* KeyChainStore.h */,
+				6FC39B741D8E81B6000126A6 /* KeyChainStore.m */,
 			);
 			path = getUUID;
 			sourceTree = "<group>";
@@ -207,6 +219,12 @@
 				TargetAttributes = {
 					6FC39B381D8E7F6E000126A6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E9P8YCU8MN;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					6FC39B511D8E7F6E000126A6 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -273,6 +291,8 @@
 				6FC39B441D8E7F6E000126A6 /* ViewController.m in Sources */,
 				6FC39B411D8E7F6E000126A6 /* AppDelegate.m in Sources */,
 				6FC39B3E1D8E7F6E000126A6 /* main.m in Sources */,
+				6FC39B721D8E8154000126A6 /* getUUID.m in Sources */,
+				6FC39B751D8E81B6000126A6 /* KeyChainStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +433,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = getUUID/getUUID.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = getUUID/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pronetway.getUUID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +449,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = getUUID/getUUID.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = getUUID/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pronetway.getUUID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -496,6 +526,7 @@
 				6FC39B681D8E7F6E000126A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FC39B691D8E7F6E000126A6 /* Build configuration list for PBXNativeTarget "getUUIDTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +535,7 @@
 				6FC39B6B1D8E7F6E000126A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FC39B6C1D8E7F6E000126A6 /* Build configuration list for PBXNativeTarget "getUUIDUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +544,7 @@
 				6FC39B6E1D8E7F6E000126A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
